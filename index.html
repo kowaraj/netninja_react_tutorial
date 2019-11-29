@@ -20,14 +20,20 @@
                 age: 10
             }
 
+            cb1 = e => console.log("Target: " + e.target);
+
+            f = {
+                name: "Inner name", 
+                ff: () => {this.name}
+            };
+
+            x = this.f.ff;
+
             render() {
                 return (
                     <div className="app-content">
-                        <h1> Heyyy! </h1>
-                        <p> My name is {this.state.name} and I am {this.state.age} years old.</p>
-                        <button onClick={e => console.log("TEST click:" + e.target)}> TEST </button>
-                        <button onMouseOver={e => console.log("TEST click:" + e.pageX)}> TEST </button>
-                        <p onCopy={e => console.log("Are you stealing from me?")}> You shouldn't steal this! </p>
+                        <button onClick={this.cb1}> TEST </button>                        { /* THIS 'this' works... */}
+                        <button onClick={e => console.log(this.state.x)}> TEST </button>  { /* THIS 'this' does NOT work! */}
                     </div> 
                 )
             }

@@ -16,24 +16,19 @@
         class App extends React.Component {
 
             state = {
-                name: 'x',
+                name: 'John',
                 age: 10
             }
 
-            cb1 = e => console.log("Target: " + e.target);
-
-            f = {
-                name: "Inner name", 
-                ff: () => {this.name}
-            };
-
-            x = this.f.ff;
+            cb1 = e => console.log(this.state);   // ... works here
+            cb2  (e) { console.log(this.state); } // ... does NOT work here! 
 
             render() {
                 return (
                     <div className="app-content">
-                        <button onClick={this.cb1}> TEST </button>                        { /* THIS 'this' works... */}
-                        <button onClick={e => console.log(this.state.x)}> TEST </button>  { /* THIS 'this' does NOT work! */}
+                        <button onClick={e => console.log(this.state)}> TEST </button>  { /* THIS 'this' works... */}
+                        <button onClick={this.cb1                    }> TEST </button>  { /* THIS 'this' also works */}
+                        <button onClick={this.cb2                    }> TEST </button>  { /* THIS 'this' works, but the other 'this' will not...  */}
                     </div> 
                 )
             }

@@ -9,16 +9,25 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <title>Document</title>
-</head>
+</head> 
 <body>
     <div id="app"> </div>
     <script type="text/babel"> 
         class App extends React.Component {
+
+            state = {
+                name: 'x',
+                age: 10
+            }
+
             render() {
                 return (
                     <div className="app-content">
                         <h1> Heyyy! </h1>
-                        <p> {Math.random() *100}</p>
+                        <p> My name is {this.state.name} and I am {this.state.age} years old.</p>
+                        <button onClick={e => console.log("TEST click:" + e.target)}> TEST </button>
+                        <button onMouseOver={e => console.log("TEST click:" + e.pageX)}> TEST </button>
+                        <p onCopy={e => console.log("Are you stealing from me?")}> You shouldn't steal this! </p>
                     </div> 
                 )
             }

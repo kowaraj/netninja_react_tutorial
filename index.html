@@ -21,7 +21,7 @@
             }
 
             cb1 = e => console.log(this.state);   // ... works here
-            cb2  (e) { console.log(this.state); } // ... does NOT work here! 
+            cb2 = (e) =>  { console.log(this.state); } // ... does NOT work here! 
 
             render() {
                 return (

@@ -1,5 +1,6 @@
 import React from 'react';
 import Com2 from './Com2';
+import AddN from './AddN';
 
 function App() {
   
@@ -15,6 +16,7 @@ function App() {
     <div className="App">
 
       <Com2 ninjas={state.ninjas} />
+      <AddN />
 
     </div>
   );

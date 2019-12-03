@@ -1,14 +1,23 @@
 import React from 'react';
 
 function Com2(props) {
+    
     console.log(props);
-    const { name, age, belt } = props
+    const { ninjas } = props.ninjas
+    console.log(ninjas)
+
+    const ns = ninjas.map( n => {
+        return (
+            <div key={n.id}>
+                <br />
+                <div>Name: {n.name}</div>
+                <div>Age: {n.age}</div>
+            </div>
+        )
+    })
+    console.log(ns)
     return (
-        <div>
-            <div>Name: {name}</div>
-            <div>Age: {age}</div>
-            <div>Belt: {belt}</div>
-        </div>
+        <div>{ns}</div>
     )
 }
 

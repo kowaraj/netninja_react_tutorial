@@ -1,15 +1,21 @@
 import React from 'react';
-import Com1 from './Com1';
 import Com2 from './Com2';
 
 function App() {
+  
+  const state = {
+    ninjas: [
+      {name: 'A', age: 1, id:1},
+      {name: 'B', age: 2, id:2},
+      {name: 'C', age: 3, id:3}
+    ]
+  }
+
   return (
     <div className="App">
-      <h1>my First React App</h1>
-      <p>Welcome</p>
-      <Com1/>
-      <Com2 name="B" age="4" belt="green"/>
-      <Com2 name="C" age="444" belt="white"/>
+
+      <Com2 ninjas={state} />
+
     </div>
   );
 }

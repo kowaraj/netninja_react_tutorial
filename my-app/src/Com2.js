@@ -2,6 +2,7 @@ import React from 'react';
 
 function Com2( {ninjas} ) {
 
+    
     const ns = ninjas.map( n => {
         return (
             <div key={n.id}>

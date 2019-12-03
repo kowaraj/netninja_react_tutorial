@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
 
-      <Com2 ninjas={state} />
+      <Com2 ninjas={state.ninjas} />
 
     </div>
   );

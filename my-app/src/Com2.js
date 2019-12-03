@@ -1,10 +1,6 @@
 import React from 'react';
 
-function Com2(props) {
-    
-    console.log(props);
-    const { ninjas } = props.ninjas
-    console.log(ninjas)
+function Com2( {ninjas} ) {
 
     const ns = ninjas.map( n => {
         return (
@@ -15,7 +11,6 @@ function Com2(props) {
             </div>
         )
     })
-    console.log(ns)
     return (
         <div>{ns}</div>
     )

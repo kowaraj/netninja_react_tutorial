@@ -1,6 +1,6 @@
 import React, {useState } from 'react';
 
-function AddN() {
+function AddN(props) {
 
     const [state, setState] = useState({
         name: null, 
@@ -9,9 +9,6 @@ function AddN() {
     })
 
     const handleChange = (e) => {
-        console.log("X! ")
-        console.log(e.target.id)
-        console.log(e.target.value)
         setState({...state, 
             [e.target.id]: e.target.value
         })
@@ -20,6 +17,7 @@ function AddN() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(state)
+        props.cb(state)
     }    
 
 

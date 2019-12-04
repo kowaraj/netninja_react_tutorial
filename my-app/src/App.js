@@ -12,6 +12,10 @@ function App() {
     ]
   }
 
+  const addN = (n) => {
+
+  }
+  
   return (
     <div className="App">
 

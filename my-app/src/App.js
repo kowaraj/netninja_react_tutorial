@@ -13,10 +13,8 @@ function App() {
 
   const addN = (n) => {
     const nn = {...n, id: Math.random()}
-    const new_n = [...state.ninjas]
-    new_n.push(nn)
     setState({
-      ninjas: new_n
+      ninjas: [...state.ninjas, nn]
     })
   }
 
